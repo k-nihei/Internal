@@ -22,6 +22,42 @@ if ($text == 'はい') {
 } else if ($text == 'いいえ') {
   exit;
 } 
+//症状取得
+ else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "頭痛",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img.jpg",
+      "title" => "頭痛",
+      "text" => "どんな感じですか?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "突然の激しい頭痛",
+            "text" => "突然の激しい頭痛"
+          ],
+          [
+            "type" => "message",
+            "label" => "発熱を伴う頭痛",
+            "text" => "発熱を伴う頭痛"
+          ],
+          [
+            "type" => "message",
+            "label" => "片側性の激しい頭痛",
+            "text" => "片側性の激しい頭痛"
+          ],
+          [
+            "type" => "message",
+            "label" => "側頭部の圧縮",
+            "text" => "側頭部の圧縮"
+          ]
+      ]
+    ]
+  ];
+}
+//最初のレスポンス
  else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
   $response_format_text = [
     "type" => "template",
