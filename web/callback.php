@@ -19,6 +19,41 @@ if ($text == 'はい') {
 		    	"type" => "text",
 			"text" => "症状を教えて下さい（頭が痛いなど）"
 			];
+//症状取得
+} else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "頭痛",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+      "title" => "頭痛",
+      "text" => "どんな感じですか?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "突然の激しい頭痛",
+            "text" => "突然の激しい頭痛"
+          ],
+          [
+            "type" => "message",
+            "label" => "発熱を伴う頭痛",
+            "text" => "発熱を伴う頭痛"
+          ],
+          [
+            "type" => "message",
+            "label" => "片側性の激しい頭痛",
+            "text" => "片側性の激しい頭痛"
+          ],
+          [
+            "type" => "message",
+            "label" => "側頭部の圧縮",
+            "text" => "側頭部の圧縮"
+          ]
+      ]
+    ]
+  ];
+//いいえの場合のレス
 } else if ($text == 'いいえ') {
   exit;
 } 
