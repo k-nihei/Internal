@@ -19,8 +19,11 @@ if ($text == 'はい') {
 		    	"type" => "text",
 			"text" => "症状を教えて下さい（頭が痛いなど）"
 			];
+else if ($text == 'いいえ') {
+  exit;
+} 
 //症状取得
-} else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
+ else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
   $response_format_text = [
     "type" => "template",
     "altText" => "頭痛",
@@ -53,9 +56,6 @@ if ($text == 'はい') {
       ]
     ]
   ];
-//いいえの場合のレス
-} else if ($text == 'いいえ') {
-  exit;
 } 
 else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
   $response_format_text = [
