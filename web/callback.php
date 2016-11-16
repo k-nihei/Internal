@@ -1,384 +1,253 @@
 <?php
 $accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
-//ÉÜÅ[ÉUÅ[Ç©ÇÁÇÃÉÅÉbÉZÅ[ÉWéÊìæ
+//„É¶„Éº„Ç∂„Éº„Åã„Çâ„ÅÆ„É°„ÉÉ„Çª„Éº„Ç∏ÂèñÂæó
 $json_string = file_get_contents('php://input');
 $jsonObj = json_decode($json_string);
 $type = $jsonObj->{"events"}[0]->{"message"}->{"type"};
-//ÉÅÉbÉZÅ[ÉWéÊìæ
+//„É°„ÉÉ„Çª„Éº„Ç∏ÂèñÂæó
 $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
-//ReplyTokenéÊìæ
+//ReplyTokenÂèñÂæó
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
-//ÉÅÉbÉZÅ[ÉWà»äOÇÃÇ∆Ç´ÇÕâΩÇ‡ï‘Ç≥Ç∏èIóπ
+//„É°„ÉÉ„Çª„Éº„Ç∏‰ª•Â§ñ„ÅÆ„Å®„Åç„ÅØ‰Ωï„ÇÇËøî„Åï„ÅöÁµÇ‰∫Ü
 if($type != "text"){
 	exit;
 }
-
-//ÉåÉXÉ|ÉìÉXÉfÅ[É^çÏê¨
-if ($text == 'ì™í…' or $text == 'ì™Ç™Ç¢ÇΩÇ¢' or $text == 'ì™Ç™í…Ç¢')Å@ {
+//Ëøî‰ø°„Éá„Éº„Çø‰ΩúÊàê
+if ($text == '„ÅØ„ÅÑ') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "ì™í…",
+    "altText" => "„Åì„Å°„Çâ„ÅÆ‰∫ãÈ†Ö„Åß„Åô„Åã?",
     "template" => [
       "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-      "title" => "ì™í…",
-      "text" => "Ç«ÇÒÇ»ä¥Ç∂Ç≈Ç∑Ç©?",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "„Çà„Åè„ÅÇ„ÇãË≥™Âïè",
+      "text" => "„Åì„Å°„Çâ„Åß„Åô„Åã?",
       "actions" => [
           [
             "type" => "message",
-            "label" => "ìÀëRÇÃåÉÇµÇ¢ì™í…",
-            "text" => "ìÀëRÇÃåÉÇµÇ¢ì™í…"
+            "label" => "‰ºöÂì°ÁôªÈå≤„Éª„É≠„Ç∞„Ç§„É≥ÊñπÊ≥ï",
+            "text" => "‰ºöÂì°ÁôªÈå≤"
           ],
           [
             "type" => "message",
-            "label" => "î≠îMÇî∫Ç§ì™í…",
-            "text" => "î≠îMÇî∫Ç§ì™í…"
+            "label" => "ÊúÄ„ÇÇÂ§ö„ÅÑË≥™Âïè",
+            "text" => "ÊúÄ„ÇÇÂ§ö„ÅÑË≥™Âïè"
           ],
           [
             "type" => "message",
-            "label" => "ï–ë§ê´ÇÃåÉÇµÇ¢ì™í…",
-            "text" => "ï–ë§ê´ÇÃåÉÇµÇ¢ì™í…"
+            "label" => "Ë≥ºÂÖ•ÊñπÊ≥ï",
+            "text" => "Ë≥ºÂÖ•ÊñπÊ≥ï"
           ],
           [
             "type" => "message",
-            "label" => "ë§ì™ïîÇÃà≥èk",
-            "text" => "ë§ì™ïîÇÃà≥èk"
+            "label" => "ÈÅï„ÅÜ„ÇÑ„Å§",
+            "text" => "‰ªñ„ÅÆ‰∫ã"
           ]
       ]
     ]
   ];
-} else if ($text == 'Ç¢Ç¢Ç¶') {
+} else if ($text == '„ÅÑ„ÅÑ„Åà') {
   exit;
-//ìÀëRÇÃåÉÇµÇ¢ì™í…
-} else if ($text == 'ìÀëRÇÃåÉÇµÇ¢ì™í…') {
+} 
+//‰ºöÂì°ÁôªÈå≤
+ else if ($text == '‰ºöÂì°ÁôªÈå≤') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "ìÀëRÇÃåÉÇµÇ¢ì™í…",
+    "altText" => "mediLink",
     "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-      "title" => "ìÀëRÇÃåÉÇµÇ¢ì™í…",
-      "text" => "ä≥é“ëúÇÕ?",
-      "actions" => [
+      "type" => "carousel",
+      "columns" => [
           [
-            "type" => "message",
-            "label" => "40Å`60ë„/çÇååà≥",
-            "text" => "4060çÇååà≥"
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/mail.png",
+            "title" => "‰ºöÂì°ÁôªÈå≤„Åó„Åü„ÅÆ„Å´Á¢∫Ë™ç„É°„Éº„É´„ÅåÂ±ä„Åã„Å™„ÅÑ",
+            "text" => "„Åì„Å°„Çâ„Åß„Åô„ÅãÔºü",
+            "actions" => [
+              [
+                  "type" => "message",
+                  "label" => "ÂØæÂá¶ÊñπÊ≥ï„ÇíË¶ã„Çã",
+                  "text" => "Á¢∫Ë™ç„É°„Éº„É´„ÅåÂ±ä„Åã„Å™„ÅÑÂØæÂá¶ÊñπÊ≥ï"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Âïè„ÅÑÂêà„Çè„Åõ„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/contact/"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Ë©≥„Åó„ÅèÂØæÂá¶ÊñπÊ≥ï„ÇíË¶ã„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/user_data/qa.php#regist"
+              ]
+            ]
           ],
           [
-            "type" => "message",
-            "label" => "ä≥é“ëúñ≥Çµ",
-            "text" => "ä≥é“ëúñ≥Çµ"
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/jushin.png",
+            "title" => "Êê∫Â∏Ø„É°„Éº„É´„ÅÆÂèó‰ø°Ë®≠ÂÆö„ÅÆÊñπÊ≥ï„Åå„Çè„Åã„Çâ„Å™„ÅÑ",
+            "text" => "„Åù„Çå„Å®„ÇÇ„Åì„Å°„ÇâÔºüÔºàÔºí„Å§ÁõÆÔºâ",
+            "actions" => [
+              [
+                  "type" => "message",
+                  "label" => "ÂØæÂá¶ÊñπÊ≥ï„ÇíË¶ã„Çã",
+                  "text" => "Âèó‰ø°Ë®≠ÂÆö„ÅÆÊñπÊ≥ï„ÇíË¶ã„Çã"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Âïè„ÅÑÂêà„Çè„Åõ„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/contact/"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Ë©≥„Åó„ÅèË¶ã„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/user_data/qa.php#regist"
+              ]
+            ]
           ],
           [
-            "type" => "message",
-            "label" => "íÜîNà»ç~ÇÃèóê´",
-            "text" => "íÜîNà»ç~ÇÃèóê´"
-          ],
-          [
-            "type" => "message",
-            "label" => "50çŒà»è„ÇÃèóê´",
-            "text" => "50çŒà»è„ÇÃèóê´"
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/password.jpg",
+            "title" => "„Éë„Çπ„ÉØ„Éº„Éâ„ÇíÂøò„Çå„ÅüÔºè„Éë„Çπ„ÉØ„Éº„Éâ„ÇíÂ§âÊõ¥„Åó„Åü„ÅÑ",
+            "text" => "„ÅØ„Åü„Åæ„Åü„Åì„Å°„ÇâÔºüÔºàÔºì„Å§ÁõÆÔºâ",
+            "actions" => [
+              [
+                  "type" => "message",
+                  "label" => "ÂØæÂá¶ÊñπÊ≥ï„ÇíË¶ã„Çã",
+                  "text" => "„Éë„Çπ„ÉØ„Éº„Éâ„ÅÆÂØæÂá¶ÊñπÊ≥ï„ÇíË¶ã„Çã"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Âïè„ÅÑÂêà„Çè„Åõ„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/contact/"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Ë©≥„Åó„ÅèË¶ã„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/user_data/qa.php#regist"
+              ]
+            ]
           ]
       ]
     ]
   ];
-//ìÀëRÇÃåÉÇµÇ¢ì™í…
 
-//î≠îMÇî∫Ç§ì™í…
-} else if ($text == 'î≠îMÇî∫Ç§ì™í…') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "î≠îMÇî∫Ç§ì™í…",
-    "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-      "title" => "î≠îMÇî∫Ç§ì™í…",
-      "text" => "ä≥é“ëúÇÕ?",
-      "actions" => [
-          [
-            "type" => "message",
-            "label" => "40Å`60ë„/çÇååà≥",
-            "text" => "4060çÇååà≥"
-          ],
-          [
-            "type" => "message",
-            "label" => "ä≥é“ëúñ≥Çµ",
-            "text" => "ä≥é“ëúñ≥Çµ"
-          ],
-          [
-            "type" => "message",
-            "label" => "íÜîNà»ç~ÇÃèóê´",
-            "text" => "íÜîNà»ç~ÇÃèóê´"
-          ],
-          [
-            "type" => "message",
-            "label" => "50çŒà»è„ÇÃèóê´",
-            "text" => "50çŒà»è„ÇÃèóê´"
-          ]
-      ]
-    ]
-  ];
-//î≠îMÇî∫Ç§ì™í…
-
-//ï–ë§ê´ÇÃåÉÇµÇ¢ì™í…
-} else if ($text == 'ï–ë§ê´ÇÃåÉÇµÇ¢ì™í…') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "ï–ë§ê´ÇÃåÉÇµÇ¢ì™í…",
-    "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-      "title" => "ï–ë§ê´ÇÃåÉÇµÇ¢ì™í…",
-      "text" => "ä≥é“ëúÇÕ?",
-      "actions" => [
-          [
-            "type" => "message",
-            "label" => "40Å`60ë„/çÇååà≥",
-            "text" => "4060çÇååà≥"
-          ],
-          [
-            "type" => "message",
-            "label" => "ä≥é“ëúñ≥Çµ",
-            "text" => "ä≥é“ëúñ≥Çµ"
-          ],
-          [
-            "type" => "message",
-            "label" => "íÜîNà»ç~ÇÃèóê´",
-            "text" => "íÜîNà»ç~ÇÃèóê´"
-          ],
-          [
-            "type" => "message",
-            "label" => "50çŒà»è„ÇÃèóê´",
-            "text" => "50çŒà»è„ÇÃèóê´"
-          ]
-      ]
-    ]
-  ];
-//ï–ë§ê´ÇÃåÉÇµÇ¢ì™í…
-
-//ë§ì™ïîÇÃà≥èk
-} else if ($text == 'ë§ì™ïîÇÃà≥èk') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "ë§ì™ïîÇÃà≥èk",
-    "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-      "title" => "ë§ì™ïîÇÃà≥èk",
-      "text" => "ä≥é“ëúÇÕ?",
-      "actions" => [
-          [
-            "type" => "message",
-            "label" => "40Å`60ë„/çÇååà≥",
-            "text" => "4060çÇååà≥"
-          ],
-          [
-            "type" => "message",
-            "label" => "ä≥é“ëúñ≥Çµ",
-            "text" => "ä≥é“ëúñ≥"
-          ],
-          [
-            "type" => "message",
-            "label" => "íÜîNà»ç~ÇÃèóê´",
-            "text" => "íÜîNà»ç~èóê´"
-          ],
-          [
-            "type" => "message",
-            "label" => "50çŒà»è„ÇÃèóê´",
-            "text" => "50çŒà»è„èóê´"
-          ]
-      ]
-    ]
-  ];
-//ë§ì™ïîÇÃà≥èk
-
-//4060çÇååà≥
-} else if ($text == '4060çÇååà≥') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "4060çÇååà≥",
-    "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-      "title" => "4060çÇååà≥",
-      "text" => "ïtêèÇ∑ÇÈè«èÛÇÕ?",
-      "actions" => [
-          [
-            "type" => "message",
-            "label" => "à´êSÅEöqìfÅ^à”éØè·äQÅ^ëÉè«èÛ(-)",
-            "text" => "A1"
-          ],
-          [
-            "type" => "message",
-            "label" => "à”éØè·äQÅ^à´êSÅEöqìf",
-            "text" => "A2"
-          ],
-          [
-            "type" => "message",
-            "label" => "éãñÏÅEéãóÕè·äQÅ^ñ—ólè[ååÅ^ëŒåıîΩéÀè¡é∏",
-            "text" => "A3"
-          ],
-          [
-            "type" => "message",
-            "label" => "ë§ì™ïîÇÃì{í£Å^ëÃä≤ãÿì˜í…Å^ëÃèdå∏è≠",
-            "text" => "A4"
-          ]
-      ]
-    ]
-  ];
-//4060çÇååà≥
-
-//ä≥é“ëúñ≥
-} else if ($text == 'ä≥é“ëúñ≥') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "ä≥é“ëúñ≥",
-    "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-      "title" => "ä≥é“ëúñ≥",
-      "text" => "ïtêèÇ∑ÇÈè«èÛÇÕ?",
-      "actions" => [
-          [
-            "type" => "message",
-            "label" => "à´êSÅEöqìfÅ^à”éØè·äQÅ^ëÉè«èÛ(-)",
-            "text" => "A1"
-          ],
-          [
-            "type" => "message",
-            "label" => "à”éØè·äQÅ^à´êSÅEöqìf",
-            "text" => "A2"
-          ],
-          [
-            "type" => "message",
-            "label" => "éãñÏÅEéãóÕè·äQÅ^ñ—ólè[ååÅ^ëŒåıîΩéÀè¡é∏",
-            "text" => "A3"
-          ],
-          [
-            "type" => "message",
-            "label" => "ë§ì™ïîÇÃì{í£Å^ëÃä≤ãÿì˜í…Å^ëÃèdå∏è≠",
-            "text" => "A4"
-          ]
-      ]
-    ]
-  ];
-//ä≥é“ëúñ≥
-
-//íÜîNà»ç~èóê´
-} else if ($text == 'íÜîNà»ç~èóê´') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "íÜîNà»ç~èóê´",
-    "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-      "title" => "íÜîNà»ç~èóê´",
-      "text" => "ïtêèÇ∑ÇÈè«èÛÇÕ?",
-      "actions" => [
-          [
-            "type" => "message",
-            "label" => "à´êSÅEöqìfÅ^à”éØè·äQÅ^ëÉè«èÛ(-)",
-            "text" => "A1"
-          ],
-          [
-            "type" => "message",
-            "label" => "à”éØè·äQÅ^à´êSÅEöqìf",
-            "text" => "A2"
-          ],
-          [
-            "type" => "message",
-            "label" => "éãñÏÅEéãóÕè·äQÅ^ñ—ólè[ååÅ^ëŒåıîΩéÀè¡é∏",
-            "text" => "A3"
-          ],
-          [
-            "type" => "message",
-            "label" => "ë§ì™ïîÇÃì{í£Å^ëÃä≤ãÿì˜í…Å^ëÃèdå∏è≠",
-            "text" => "A4"
-          ]
-      ]
-    ]
-  ];
-//íÜîNà»ç~èóê´
-
-//50çŒà»è„èóê´
-} else if ($text == '50çŒà»è„èóê´') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "50çŒà»è„èóê´",
-    "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
-      "title" => "50çŒà»è„èóê´",
-      "text" => "ïtêèÇ∑ÇÈè«èÛÇÕ?",
-      "actions" => [
-          [
-            "type" => "message",
-            "label" => "à´êSÅEöqìfÅ^à”éØè·äQÅ^ëÉè«èÛ(-)",
-            "text" => "A1"
-          ],
-          [
-            "type" => "message",
-            "label" => "à”éØè·äQÅ^à´êSÅEöqìf",
-            "text" => "A2"
-          ],
-          [
-            "type" => "message",
-            "label" => "éãñÏÅEéãóÕè·äQÅ^ñ—ólè[ååÅ^ëŒåıîΩéÀè¡é∏",
-            "text" => "A3"
-          ],
-          [
-            "type" => "message",
-            "label" => "ë§ì™ïîÇÃì{í£Å^ëÃä≤ãÿì˜í…Å^ëÃèdå∏è≠",
-            "text" => "A4"
-          ]
-      ]
-    ]
-  ];
-//50çŒà»è„èóê´
-
-//ÉCÉìÉvÉåÉbÉVÉáÉì
-} else if ($text == 'A1') {
+//ÂØæÂá¶ÊñπÊ≥ïÂèó‰ø°Ë®≠ÂÆö„ÅÆÊñπÊ≥ï„ÇíË¶ã„ÇãÁâà
+} else if ($text == 'Á¢∫Ë™ç„É°„Éº„É´„ÅåÂ±ä„Åã„Å™„ÅÑÂØæÂá¶ÊñπÊ≥ï') {
 	  $response_format_text = [
 		    	"type" => "text",
-			"text" => "1st ImpressionÇÕÅyÇ≠Ç‡ñåâ∫èoååÅzÇ≈Ç∑ÅBè⁄ç◊ÇÕÅuÉåÉrÉÖÅ[ÉuÉbÉNì‡â»ÅEäOâ»2016-2017ÅvÇÃJ-15ÇéQè∆Ç≠ÇæÇ≥Ç¢ÅB
-https://www.medilink-study.com/products/detail.php?product_id=12"
+			"text" => "Á¢∫Ë™ç„É°„Éº„É´„ÅØ„ÄÅ„ÅîÁôªÈå≤„ÅÑ„Åü„Å†„ÅÑ„Åü„Ç¢„Éâ„É¨„Çπ„Å´Ëá™ÂãïÁöÑ„Å´ÈÄÅ‰ø°„Åï„Çå„Åæ„Åô„ÄÇ‰∏ãË®ò„Çí„ÅîÁ¢∫Ë™ç„Åè„Å†„Åï„ÅÑ„ÄÇ
+ÔºëÔºâ„ÄåËø∑ÊÉë„É°„Éº„É´„Äç„Éï„Ç©„É´„ÉÄ„Çí„ÅîÁ¢∫Ë™ç„Åè„Å†„Åï„ÅÑ„ÄÇ 
+ÔºíÔºâÂÜçÂ∫¶„ÄÅ„É°„Éº„É´„Ç¢„Éâ„É¨„Çπ„Å´Ë™§„Çä„Åå„Å™„ÅÑ„Çà„ÅÜ„ÄÅ„Çà„Åè„ÅîÁ¢∫Ë™ç„ÅÆ„ÅÜ„Åà‰ºöÂì°ÁôªÈå≤„Çí„ÅäÊâãÁ∂ö„Åç„Åè„Å†„Åï„ÅÑ„ÄÇÂêå„Åò„Ç¢„Éâ„É¨„Çπ„Åß„ÅØÁôªÈå≤„Åß„Åç„Å™„ÅÑ„Åü„ÇÅ„ÄÅÊúÄÂàù„ÅÆ„ÅîÁôªÈå≤„É°„Éº„É´„Ç¢„Éâ„É¨„Çπ„Å´Ë™§„Çä„Åå„Å™„Åã„Å£„ÅüÂ†¥Âêà„ÄÅ„Äå‚Äª„Åô„Åß„Å´‰ºöÂì°ÁôªÈå≤„Åß‰ΩøÁî®„Åï„Çå„Å¶„ÅÑ„Çã„É°„Éº„É´„Ç¢„Éâ„É¨„Çπ„Åß„Åô„ÄÇ„Äç„Å®Ë°®Á§∫„Åï„Çå„ÄÅÁôªÈå≤„Åå„Åß„Åç„Åæ„Åõ„Çì„ÄÇ 
+ÔºìÔºâ‰∏äË®òÔºë„ÄÅÔºí„Åß„ÇÇÂéüÂõ†„ÅåÂà§Êòé„Åó„Å™„ÅÑÂ†¥Âêà„ÄÅ„Äå@medilink-study.com„Äç„Åã„Çâ„ÅÆ„É°„Éº„É´„ÇíÂèó‰ø°„Åß„Åç„Çã„Çà„ÅÜË®≠ÂÆö„ÇíÂÜçÂ∫¶„ÅîÁ¢∫Ë™ç„ÅÆ„ÅÜ„Åà„ÄÅ„ÅäÂïè„ÅÑÂêà„Çè„Åõ„Éö„Éº„Ç∏(https://www.medilink-study.com/contact/)„Çà„Çä„ÅîÈÄ£Áµ°„Åè„Å†„Åï„ÅÑ„ÄÇ "
 			];
-} else if ($text == 'A2') {
+
+//ÂØæÂá¶ÊñπÊ≥ïÂèó‰ø°„É°„Éº„É´Áâà
+} else if ($text == 'Âèó‰ø°Ë®≠ÂÆö„ÅÆÊñπÊ≥ï„ÇíË¶ã„Çã') {
 	  $response_format_text = [
 		    	"type" => "text",
-			"text" => "1st ImpressionÇÕÅyî]âäÅzÇ≈Ç∑ÅBè⁄ç◊ÇÕÅuÉåÉrÉÖÅ[ÉuÉbÉNì‡â»ÅEäOâ»2016-2017ÅvÇÃJ-35ÇéQè∆Ç≠ÇæÇ≥Ç¢ÅB
-https://www.medilink-study.com/products/detail.php?product_id=12"
+			"text" => "„Ç≠„É£„É™„Ç¢ÔºàDocomo„ÉªAU„ÉªSoftbankÔºâÊØé„Å´Ë®≠ÂÆö„ÅåÁï∞„Å™„Çä„Åæ„Åô„ÄÇË©≥Á¥∞„ÅØ„Ç≥„ÉÅ„É©(https://www.medilink-study.com/user_data/qa.php#regist)„Çí„ÅîÂèÇÁÖß„Åè„Å†„Åï„ÅÑ„ÄÇ"
 			];
-} else if ($text == 'A3') {
+
+//ÂØæÂá¶ÊñπÊ≥ï„Éë„Çπ„ÉØ„Éº„ÉâÁâà
+} else if ($text == '„Éë„Çπ„ÉØ„Éº„Éâ„ÅÆÂØæÂá¶ÊñπÊ≥ï„ÇíË¶ã„Çã') {
 	  $response_format_text = [
 		    	"type" => "text",
-			"text" => "1st ImpressionÇÕÅyã}ê´óŒì‡è·î≠çÏÅzÇ≈Ç∑ÅBè⁄ç◊ÇÕÅuÉåÉrÉÖÅ[ÉuÉbÉNì‡â»ÅEäOâ»2016-2017ÅvÇéQè∆Ç≠ÇæÇ≥Ç¢ÅB
-https://www.medilink-study.com/products/detail.php?product_id=12"
+			"text" => "Ôºà„Éë„Çπ„ÉØ„Éº„Éâ„ÇíÂøò„Çå„ÅüÂ†¥ÂêàÔºâ 
+„Éë„Çπ„ÉØ„Éº„Éâ„ÅÆÂÜçÁô∫Ë°å„Éö„Éº„Ç∏(https://www.medilink-study.com/forgot/)„Çà„Çä„ÄÅÁôªÈå≤„É°„Éº„É´„Ç¢„Éâ„É¨„Çπ„Å®Ê∞èÂêç„ÇíÂÖ•Âäõ„Åó„ÄÅ„ÅäÊâãÁ∂ö„Åç„Åè„Å†„Åï„ÅÑ„ÄÇËá™Âãï„Åß„É°„Éº„É´„Ç¢„Éâ„É¨„ÇπÂÆõ„Å´„ÄÅ‰ªÆ„Éë„Çπ„ÉØ„Éº„Éâ„ÅåÁô∫Ë°å„Åï„Çå„Åæ„Åô„ÄÇ
+Ôºà„Éë„Çπ„ÉØ„Éº„Éâ„ÇíÂ§âÊõ¥„Åô„ÇãÔºâ 
+„Çµ„Ç§„Éà„Å´„É≠„Ç∞„Ç§„É≥„Åó„ÅüÁä∂ÊÖã„Åß„ÄÅ„Éó„É≠„Éï„Ç£„Éº„É´Á∑®ÈõÜÁîªÈù¢(https://www.medilink-study.com/mypage/change.php)„Çà„Çä‰ªªÊÑè„ÅÆ„Éë„Çπ„ÉØ„Éº„Éâ„Å´Â§âÊõ¥„Åå„Åß„Åç„Åæ„Åô„ÄÇ"
 			];
-} else if ($text == 'A4') {
-	  $response_format_text = [
-		    	"type" => "text",
-			"text" => "1st ImpressionÇÕÅyë§ì™ìÆñ¨âäÅzÇ≈Ç∑ÅBè⁄ç◊ÇÕÅuÉåÉrÉÖÅ[ÉuÉbÉNì‡â»ÅEäOâ»2016-2017ÅvÇÃJ-32ÇéQè∆Ç≠ÇæÇ≥Ç¢ÅB
-https://www.medilink-study.com/products/detail.php?product_id=12"
-			];
-}  else if ($text == 'éøñ‚' or $text == 'ÉCÉìÉvÉåÉbÉVÉáÉì' or $text == 'ÉCÉìÉvÉåÉbÉVÉáÉìÇ™ímÇËÇΩÇ¢') {
+//‰ªñ„ÅÆ‰∫ã
+} else if ($text == '‰ªñ„ÅÆ‰∫ã') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "ÉCÉìÉvÉåÉbÉVÉáÉìÇ™ímÇËÇΩÇ¢ÅHÅiÇÕÇ¢Å^Ç¢Ç¢Ç¶Åj",
+    "altText" => "mediLink",
+    "template" => [
+      "type" => "carousel",
+      "columns" => [
+          [
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-1.jpg",
+            "title" => "mediLink„Å®„ÅØ",
+            "text" => "„Åì„Å°„Çâ„Åß„Åô„ÅãÔºü",
+            "actions" => [
+              [
+                  "type" => "postback",
+                  "label" => "Ë¶ã„Çã",
+                  "data" => "action=rsv&itemid=111"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Âïè„ÅÑÂêà„Çè„Åõ„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/contact/"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Ë©≥„Åó„ÅèË¶ã„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/user_data/about.php"
+              ]
+            ]
+          ],
+          [
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-2.jpg",
+            "title" => "mediLink„ÅÆÊßãÊàê",
+            "text" => "„Åù„Çå„Å®„ÇÇ„Åì„Å°„ÇâÔºüÔºàÔºí„Å§ÁõÆÔºâ",
+            "actions" => [
+              [
+                  "type" => "postback",
+                  "label" => "Ë¶ã„Çã",
+                  "data" => "action=rsv&itemid=222"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Âïè„ÅÑÂêà„Çè„Åõ„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/contact/"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Ë©≥„Åó„ÅèË¶ã„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/user_data/about.php"
+              ]
+            ]
+          ],
+          [
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg",
+            "title" => "mediLink„Ç¢„Éó„É™ Ë§áÊï∞Á´ØÊú´„Åß„ÅÆ„ÅîÂà©Áî®„Å´„Å§„ÅÑ„Å¶",
+            "text" => "„ÅØ„Åü„Åæ„Åü„Åì„Å°„ÇâÔºüÔºàÔºì„Å§ÁõÆÔºâ",
+            "actions" => [
+              [
+                  "type" => "postback",
+                  "label" => "Ë¶ã„Çã",
+                  "data" => "action=rsv&itemid=222"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Âïè„ÅÑÂêà„Çè„Åõ„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/contact/"
+              ],
+              [
+                  "type" => "uri",
+                  "label" => "Ë©≥„Åó„ÅèË¶ã„ÇãÔºà„Éñ„É©„Ç¶„Ç∂Ëµ∑ÂãïÔºâ",
+                  "uri" => "https://www.medilink-study.com/user_data/about.php"
+              ]
+            ]
+          ]
+      ]
+    ]
+  ];
+//‰ªñ„ÅÆ‰∫ã
+} else if ($text == 'Ë≥™Âïè' or $text == '„Åì„Çì„Å´„Å°„ÅØ') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "„Åì„Çì„Å´„Å°„ÅØ„ÄÄ‰Ωï„Åã„ÅîË≥™Âïè„Åß„Åô„ÅãÔºüÔºà„ÅØ„ÅÑÔºè„ÅÑ„ÅÑ„ÅàÔºâ",
     "template" => [
         "type" => "confirm",
-        "text" => "ÉCÉìÉvÉåÉbÉVÉáÉìÇ™ímÇËÇΩÇ¢ÅH",
+        "text" => "„Åì„Çì„Å´„Å°„ÅØ„ÄÄ‰Ωï„Åã„ÅîË≥™Âïè„Åß„Åô„ÅãÔºü",
         "actions" => [
             [
               "type" => "message",
-              "label" => "ÇÕÇ¢",
-              "text" => "ÇÕÇ¢"
+              "label" => "„ÅØ„ÅÑ",
+              "text" => "„ÅØ„ÅÑ"
             ],
             [
               "type" => "message",
-              "label" => "Ç¢Ç¢Ç¶",
-              "text" => "Ç¢Ç¢Ç¶"
+              "label" => "„ÅÑ„ÅÑ„Åà",
+              "text" => "„ÅÑ„ÅÑ„Åà"
             ]
         ]
     ]
