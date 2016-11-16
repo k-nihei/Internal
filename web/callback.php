@@ -45,17 +45,17 @@ if ($text == 'はい') {
               [
                   "type" => "message",
                   "label" => "突然の激しい頭痛",
-                  "text" => "突然の激しい頭痛"
+                  "text" => "C1"
               ],
               [
                   "type" => "message",
-                  "label" => "突然の激しい頭痛",
-                  "text" => "突然の激しい頭痛"
+                  "label" => "突然の頭痛",
+                  "text" => "C2"
               ],
               [
                   "type" => "message",
-                  "label" => "突然の激しい頭痛",
-                  "text" => "突然の激しい頭痛"
+                  "label" => "発熱を伴う頭痛",
+                  "text" => "C3"
               ]
             ]
           ],
@@ -66,18 +66,18 @@ if ($text == 'はい') {
             "actions" => [
               [
                   "type" => "message",
-                  "label" => "突然の激しい頭痛",
-                  "text" => "突然の激しい頭痛"
+                  "label" => "片側性の激しい頭痛",
+                  "text" => "C4"
               ],
               [
                   "type" => "message",
-                  "label" => "突然の激しい頭痛",
-                  "text" => "突然の激しい頭痛"
+                  "label" => "側頭部の圧痛を伴う拍動性の頭痛",
+                  "text" => "C5"
               ],
               [
                   "type" => "message",
-                  "label" => "突然の激しい頭痛",
-                  "text" => "突然の激しい頭痛"
+                  "label" => "絞めつけられる感じの頭痛",
+                  "text" => "C6"
               ]
             ]
           ],
@@ -88,18 +88,18 @@ if ($text == 'はい') {
             "actions" => [
               [
                   "type" => "message",
-                  "label" => "突然の激しい頭痛",
-                  "text" => "突然の激しい頭痛"
+                  "label" => "歩行や階段昇降により憎悪",
+                  "text" => "C7"
               ],
               [
                   "type" => "message",
-                  "label" => "突然の激しい頭痛",
-                  "text" => "突然の激しい頭痛"
+                  "label" => "片側眼周囲から側頭部にかけての高度な頭痛",
+                  "text" => "C8"
               ],
               [
                   "type" => "message",
-                  "label" => "突然の激しい頭痛",
-                  "text" => "突然の激しい頭痛"
+                  "label" => "前屈で悪化する持続性の頭痛",
+                  "text" => "C9"
               ]
             ]
           ]
