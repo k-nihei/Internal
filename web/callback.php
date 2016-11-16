@@ -347,22 +347,22 @@ https://www.medilink-study.com/products/detail.php?product_id=12"
           [
             "type" => "message",
             "label" => "突発性",
-            "text" => "F1"
+            "text" => "S1"
           ],
           [
             "type" => "message",
             "label" => "発作性",
-            "text" => "F2"
+            "text" => "S2"
           ],
           [
             "type" => "message",
             "label" => "急性",
-            "text" => "F3"
+            "text" => "S3"
           ],
           [
             "type" => "message",
             "label" => "慢性",
-            "text" => "F4"
+            "text" => "S4"
           ]
       ]
     ]
