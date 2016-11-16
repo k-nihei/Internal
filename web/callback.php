@@ -1,34 +1,73 @@
 <?php
 $accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
-//ÉÜÅ[ÉUÅ[Ç©ÇÁÇÃÉÅÉbÉZÅ[ÉWéÊìæ
+//„É¶„Éº„Ç∂„Éº„Åã„Çâ„ÅÆ„É°„ÉÉ„Çª„Éº„Ç∏ÂèñÂæó
 $json_string = file_get_contents('php://input');
 $jsonObj = json_decode($json_string);
 $type = $jsonObj->{"events"}[0]->{"message"}->{"type"};
-//ÉÅÉbÉZÅ[ÉWéÊìæ
+//„É°„ÉÉ„Çª„Éº„Ç∏ÂèñÂæó
 $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
-//ReplyTokenéÊìæ
+//ReplyTokenÂèñÂæó
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
-//ÉÅÉbÉZÅ[ÉWà»äOÇÃÇ∆Ç´ÇÕâΩÇ‡ï‘Ç≥Ç∏èIóπ
+//„É°„ÉÉ„Çª„Éº„Ç∏‰ª•Â§ñ„ÅÆ„Å®„Åç„ÅØ‰Ωï„ÇÇËøî„Åï„ÅöÁµÇ‰∫Ü
 if($type != "text"){
 	exit;
 }
-if ($text == 'éøñ‚') {
+
+//Ëøî‰ø°„Éá„Éº„Çø‰ΩúÊàê
+if ($text == '„ÅØ„ÅÑ') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "ÉCÉìÉvÉåÉbÉVÉáÉìÇ™ímÇËÇΩÇ¢ÅHÅiÇÕÇ¢Å^Ç¢Ç¢Ç¶Åj",
+    "altText" => "„Åì„Å°„Çâ„ÅÆ‰∫ãÈ†Ö„Åß„Åô„Åã?",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "„Çà„Åè„ÅÇ„ÇãË≥™Âïè",
+      "text" => "„Åì„Å°„Çâ„Åß„Åô„Åã?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "‰ºöÂì°ÁôªÈå≤„Éª„É≠„Ç∞„Ç§„É≥ÊñπÊ≥ï",
+            "text" => "‰ºöÂì°ÁôªÈå≤"
+          ],
+          [
+            "type" => "message",
+            "label" => "ÊúÄ„ÇÇÂ§ö„ÅÑË≥™Âïè",
+            "text" => "ÊúÄ„ÇÇÂ§ö„ÅÑË≥™Âïè"
+          ],
+          [
+            "type" => "message",
+            "label" => "Ë≥ºÂÖ•ÊñπÊ≥ï",
+            "text" => "Ë≥ºÂÖ•ÊñπÊ≥ï"
+          ],
+          [
+            "type" => "message",
+            "label" => "ÈÅï„ÅÜ„ÇÑ„Å§",
+            "text" => "‰ªñ„ÅÆ‰∫ã"
+          ]
+      ]
+    ]
+  ];
+} else if ($text == '„ÅÑ„ÅÑ„Åà') {
+  exit;
+} 
+
+else if ($text == 'Ë≥™Âïè') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "„Ç§„É≥„Éó„É¨„ÉÉ„Ç∑„Éß„É≥„ÅåÁü•„Çä„Åü„ÅÑÔºüÔºà„ÅØ„ÅÑÔºè„ÅÑ„ÅÑ„ÅàÔºâ",
     "template" => [
         "type" => "confirm",
-        "text" => "ÉCÉìÉvÉåÉbÉVÉáÉìÇ™ímÇËÇΩÇ¢ÅH",
+        "text" => "„Ç§„É≥„Éó„É¨„ÉÉ„Ç∑„Éß„É≥„ÅåÁü•„Çä„Åü„ÅÑÔºü",
         "actions" => [
             [
               "type" => "message",
-              "label" => "ÇÕÇ¢",
-              "text" => "ÇÕÇ¢"
+              "label" => "„ÅØ„ÅÑ",
+              "text" => "„ÅØ„ÅÑ"
             ],
             [
               "type" => "message",
-              "label" => "Ç¢Ç¢Ç¶",
-              "text" => "Ç¢Ç¢Ç¶"
+              "label" => "„ÅÑ„ÅÑ„Åà",
+              "text" => "„ÅÑ„ÅÑ„Åà"
             ]
         ]
     ]
