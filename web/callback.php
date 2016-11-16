@@ -332,6 +332,232 @@ https://www.medilink-study.com/products/detail.php?product_id=12"
 			];
 }
 //Impression
+//頭痛
+//呼吸困難
+ else if ($text == '呼吸困難' or $text == '息が苦しい' or $text == '呼吸がしにくい' or $text == '息切れ') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "呼吸困難",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/iki.jpg",
+      "title" => "呼吸困難",
+      "text" => "患者像は?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "突発性",
+            "text" => "F1"
+          ],
+          [
+            "type" => "message",
+            "label" => "発作性",
+            "text" => "F2"
+          ],
+          [
+            "type" => "message",
+            "label" => "急性",
+            "text" => "F3"
+          ],
+          [
+            "type" => "message",
+            "label" => "慢性",
+            "text" => "F4"
+          ]
+      ]
+    ]
+  ];
+}
+//S1
+ else if ($text == 'S1') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "突発性",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/iki.jpg",
+      "title" => "突発性",
+      "text" => "胸痛",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "胸痛(+)",
+            "text" => "T1"
+          ],
+          [
+            "type" => "message",
+            "label" => "胸痛(-)",
+            "text" => "II3"
+          ]
+      ]
+    ]
+  ];
+}
+//S2
+ else if ($text == 'S2') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "発作性",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/iki.jpg",
+      "title" => "発作性",
+      "text" => "作時",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "労作時",
+            "text" => "II4"
+          ],
+          [
+            "type" => "message",
+            "label" => "夜間～朝の非労作時",
+            "text" => "II5"
+          ]
+      ]
+    ]
+  ];
+}
+//S3
+ else if ($text == 'S3') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "急性",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/iki.jpg",
+      "title" => "急性",
+      "text" => "因子",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "冠危険因子(+)",
+            "text" => "II6"
+          ],
+          [
+            "type" => "message",
+            "label" => "その他(最初の選択肢)",
+            "text" => "呼吸困難"
+          ]
+      ]
+    ]
+  ];
+}
+//S4
+ else if ($text == 'S4') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "慢性",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/iki.jpg",
+      "title" => "慢性",
+      "text" => "呼吸",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "起座呼吸(+)",
+            "text" => "II7"
+          ],
+          [
+            "type" => "message",
+            "label" => "起座呼吸(-)",
+            "text" => "II8"
+          ]
+      ]
+    ]
+  ];
+}
+//T1
+ else if ($text == 'T1') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "3rd",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/iki.jpg",
+      "title" => "症状",
+      "text" => "症状",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "長期臥床後",
+            "text" => "II1"
+          ],
+          [
+            "type" => "message",
+            "label" => "呼吸音左右差(+)",
+            "text" => "II2"
+          ]
+      ]
+    ]
+  ];
+}
+else if ($text == 'II1') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【肺塞栓症】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'II2') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【気胸】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'II3') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【過換気症候群】【気道内異物】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'II4') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【COPD】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'II5') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【気管支喘息】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'II6') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【急性冠症候群】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'II7') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【うっ血性心不全】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'II8') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【重症筋無力症】【貧血】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+//呼吸困難
 
 //最初のレスポンス
  else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
