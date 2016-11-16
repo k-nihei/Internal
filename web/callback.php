@@ -28,7 +28,86 @@ if ($text == 'はい') {
 		    	"type" => "text",
 			"text" => "どんな感じですか?"
 			];
-} 
+}
+//頭痛
+ else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "mediLink",
+    "template" => [
+      "type" => "carousel",
+      "columns" => [
+          [
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+            "title" => "どんな感じですか?",
+            "text" => "どんな感じですか?(症状)",
+            "actions" => [
+              [
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
+              ]
+            ]
+          ],
+          [
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+            "title" => "どんな感じですか?",
+            "text" => "どんな感じですか?(症状)",
+            "actions" => [
+              [
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
+              ]
+            ]
+          ],
+          [
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+            "title" => "どんな感じですか?",
+            "text" => "どんな感じですか?(症状)",
+            "actions" => [
+              [
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "突然の激しい頭痛",
+                  "text" => "突然の激しい頭痛"
+              ]
+            ]
+          ]
+      ]
+    ]
+  ];
+}
+//頭痛
 //最初のレスポンス
  else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
   $response_format_text = [
