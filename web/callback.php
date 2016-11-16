@@ -12,7 +12,7 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 if($type != "text"){
 	exit;
 }
-if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッションが知りたい') {
+if ($text == '質問') {
   $response_format_text = [
     "type" => "template",
     "altText" => "インプレッションが知りたい？（はい／いいえ）",
