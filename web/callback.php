@@ -108,6 +108,42 @@ if ($text == 'はい') {
   ];
 }
 //頭痛
+//患者像
+ else if ($text == 'C1' or $text == 'C2' or $text == 'C3' or $text == 'C4' or $text == 'C5') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "患者像",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+      "title" => "患者像",
+      "text" => "患者像は?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "40～60代/高血圧",
+            "text" => "K1"
+          ],
+          [
+            "type" => "message",
+            "label" => "患者像無し",
+            "text" => "K2"
+          ],
+          [
+            "type" => "message",
+            "label" => "中年以降の女性",
+            "text" => "K3"
+          ],
+          [
+            "type" => "message",
+            "label" => "50歳以上の女性",
+            "text" => "K4"
+          ]
+      ]
+    ]
+  ];
+}
+//患者像
 //最初のレスポンス
  else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
   $response_format_text = [
