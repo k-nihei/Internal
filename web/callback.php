@@ -20,7 +20,10 @@ if ($text == 'はい') {
 			"text" => "症状を教えて下さい（頭が痛いなど）"
 			];
 } else if ($text == 'いいえ') {
-  exit;
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "じゃあ何がしたいの？"
+			];
 } 
 //症状取得
 // else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い') {
@@ -334,7 +337,7 @@ https://www.medilink-study.com/products/detail.php?product_id=12"
 //Impression
 //頭痛
 //呼吸困難
- else if ($text == '呼吸困難' or $text == '息が苦しい' or $text == '呼吸がしにくい' or $text == '息切れ') {
+ else if ($text == '呼吸困難' or $text == '息が苦しい' or $text == '呼吸がしにくい' or $text == '息切れ' or $text == '息苦しい') {
   $response_format_text = [
     "type" => "template",
     "altText" => "呼吸困難",
