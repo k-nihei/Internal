@@ -19,10 +19,10 @@ if ($text == 'はい') {
 		    	"type" => "text",
 			"text" => "症状を教えて下さい（頭が痛いなど）"
 			];
-else if ($text == 'いいえ') {
+} else if ($text == 'いいえ') {
   exit;
 } 
-else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
+ else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
   $response_format_text = [
     "type" => "template",
     "altText" => "インプレッションが知りたい？（はい／いいえ）",
