@@ -12,15 +12,17 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 if($type != "text"){
 	exit;
 }
-
+//返信データ作成
 if ($text == 'はい') {
 	  $response_format_text = [
 		    	"type" => "text",
 			"text" => "症状を教えて下さい（頭が痛いなど）"
 			];
-
+} else if ($text == 'いいえ') {
+  exit;
+} 
 //レスポンスデータ作成
-} else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
+ else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い')　 {
   $response_format_text = [
     "type" => "template",
     "altText" => "頭痛",
