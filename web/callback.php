@@ -23,17 +23,17 @@ if ($text == 'はい') {
   exit;
 } 
 //症状取得
- else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い') {
-	  $response_format_text = [
-		    	"type" => "text",
-			"text" => "どんな感じですか?"
-			];
-}
+// else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い') {
+// 	  $response_format_text = [
+// 		    	"type" => "text",
+// 			"text" => "どんな感じですか?"
+// 			];
+// }
 //頭痛
  else if ($text == '頭痛' or $text == '頭がいたい' or $text == '頭が痛い') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "mediLink",
+    "altText" => "頭痛",
     "template" => [
       "type" => "carousel",
       "columns" => [
