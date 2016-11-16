@@ -109,7 +109,7 @@ if ($text == 'はい') {
 }
 //頭痛
 //患者像
- else if ($text == 'C1' or $text == 'C2' or $text == 'C3' or $text == 'C4' or $text == 'C5') {
+ else if ($text == 'C1' or $text == 'C2' or $text == 'C3' or $text == 'C4') {
   $response_format_text = [
     "type" => "template",
     "altText" => "患者像",
@@ -126,23 +126,58 @@ if ($text == 'はい') {
           ],
           [
             "type" => "message",
-            "label" => "患者像無し",
+            "label" => "高血圧/高齢者",
             "text" => "K2"
           ],
           [
             "type" => "message",
-            "label" => "中年以降の女性",
+            "label" => "典型的な患者像なし",
             "text" => "K3"
           ],
           [
             "type" => "message",
-            "label" => "50歳以上の女性",
+            "label" => "中年以降の女性",
             "text" => "K4"
           ]
       ]
     ]
   ];
 }
+ else if ($text == 'C5' or $text == 'C6' or $text == 'C7' or $text == 'C8' or $text == 'C9') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "患者像",
+    "template" => [
+      "type" => "buttons",
+      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+      "title" => "患者像",
+      "text" => "患者像は?",
+      "actions" => [
+          [
+            "type" => "message",
+            "label" => "50代以上の女性",
+            "text" => "K5"
+          ],
+          [
+            "type" => "message",
+            "label" => "精神的ストレス/睡眠不足",
+            "text" => "K6"
+          ],
+          [
+            "type" => "message",
+            "label" => "若年女性",
+            "text" => "K7"
+          ],
+          [
+            "type" => "message",
+            "label" => "若年～中年男性",
+            "text" => "K8"
+          ]
+      ]
+    ]
+  ];
+}
+
 //患者像
 //最初のレスポンス
  else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
