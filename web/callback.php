@@ -15,42 +15,13 @@ if($type != "text"){
 
 //返信データ作成
 if ($text == 'はい') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "こちらの事項ですか?",
-    "template" => [
-      "type" => "buttons",
-      "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
-      "title" => "よくある質問",
-      "text" => "こちらですか?",
-      "actions" => [
-          [
-            "type" => "message",
-            "label" => "会員登録・ログイン方法",
-            "text" => "会員登録"
-          ],
-          [
-            "type" => "message",
-            "label" => "最も多い質問",
-            "text" => "最も多い質問"
-          ],
-          [
-            "type" => "message",
-            "label" => "購入方法",
-            "text" => "購入方法"
-          ],
-          [
-            "type" => "message",
-            "label" => "違うやつ",
-            "text" => "他の事"
-          ]
-      ]
-    ]
-  ];
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "症状を教えて下さい（頭が痛いなど）"
+			];
 } else if ($text == 'いいえ') {
   exit;
 } 
-
 else if ($text == '質問') {
   $response_format_text = [
     "type" => "template",
