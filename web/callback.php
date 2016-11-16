@@ -170,20 +170,95 @@ if ($text == 'はい') {
           ],
           [
             "type" => "message",
-            "label" => "若年～中年男性",
-            "text" => "K8"
-          ],
-          [
-            "type" => "message",
             "label" => "感冒後",
-            "text" => "K9"
+            "text" => "K8"
           ]
       ]
     ]
   ];
 }
-
 //患者像
+
+//不随症状
+ else if ($text == 'K1' or $text == 'K2' or $text == 'K3' or $text == 'K4' or $text == 'K5' or $text == 'K6' or $text == 'K7' or $text == 'K8') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "付随する症状",
+    "template" => [
+      "type" => "carousel",
+      "columns" => [
+          [
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+            "title" => "付随する症状",
+            "text" => "付随する症状は?",
+            "actions" => [
+              [
+                  "type" => "message",
+                  "label" => "巣症状(-)",
+                  "text" => "I1"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "巣症状",
+                  "text" => "I2"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "髄膜刺激症状",
+                  "text" => "I3"
+              ]
+            ]
+          ],
+          [
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+            "title" => "どんな感じですか?",
+            "text" => "どんな感じですか?(症状)",
+            "actions" => [
+              [
+                  "type" => "message",
+                  "label" => "対光反射消失",
+                  "text" => "I4"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "側頭部の怒張・硬結",
+                  "text" => "I5"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "嘔吐(-)",
+                  "text" => "I6"
+              ]
+            ]
+          ],
+          [
+            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/head.jpg",
+            "title" => "どんな感じですか?",
+            "text" => "どんな感じですか?(症状)",
+            "actions" => [
+              [
+                  "type" => "message",
+                  "label" => "閃輝性暗点(発作前)",
+                  "text" => "I7"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "結膜充血・眼裂狭小",
+                  "text" => "C8"
+              ],
+              [
+                  "type" => "message",
+                  "label" => "嗅覚障害",
+                  "text" => "C9"
+              ]
+            ]
+          ]
+      ]
+    ]
+  ];
+}
+//不随症状
+
 //最初のレスポンス
  else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
   $response_format_text = [
