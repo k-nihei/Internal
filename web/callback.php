@@ -244,12 +244,12 @@ if ($text == 'はい') {
               [
                   "type" => "message",
                   "label" => "結膜充血・眼裂狭小",
-                  "text" => "C8"
+                  "text" => "I8"
               ],
               [
                   "type" => "message",
                   "label" => "嗅覚障害",
-                  "text" => "C9"
+                  "text" => "I9"
               ]
             ]
           ]
@@ -258,6 +258,80 @@ if ($text == 'はい') {
   ];
 }
 //不随症状
+//Impression
+else if ($text == 'I1') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【くも膜下出血】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'I2') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【脳出血】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'I3') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【髄膜炎】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'I4') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【急性緑内障発作】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'I5') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【側頭動脈炎】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'I6') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【緊張型頭痛】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'I7') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【片頭痛】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'I8') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【群発頭痛】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+else if ($text == 'I9') {
+	  $response_format_text = [
+		    	"type" => "text",
+			"text" => "1st Impressionは【急性副鼻腔炎】です。
+詳細は【レビューブック内科・外科2016-2017】を参照ください。
+https://www.medilink-study.com/products/detail.php?product_id=12"
+			];
+}
+//Impression
 
 //最初のレスポンス
  else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
