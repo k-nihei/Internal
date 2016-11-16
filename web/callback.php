@@ -172,6 +172,11 @@ if ($text == 'はい') {
             "type" => "message",
             "label" => "若年～中年男性",
             "text" => "K8"
+          ],
+          [
+            "type" => "message",
+            "label" => "感冒後",
+            "text" => "K9"
           ]
       ]
     ]
