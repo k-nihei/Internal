@@ -22,7 +22,7 @@ if ($text == 'はい') {
 } else if ($text == 'いいえ') {
   exit;
 } 
-else if ($text == '質問') {
+else if ($text == '質問' or $text == 'インプレッション' or $text == 'インプレッション教えて' or $text == 'インプレッション知りたい') {
   $response_format_text = [
     "type" => "template",
     "altText" => "インプレッションが知りたい？（はい／いいえ）",
